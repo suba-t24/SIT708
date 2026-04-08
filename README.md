@@ -1,54 +1,100 @@
-This Repository consists of all of the works completed as part of SIT708 Mobile Application Development unit. It has projects done as part of weekly tasks and ontrack assignments.
+# SIT708
 
-# Travel Companion App
+This repository contains Android applications developed as part of the **SIT708 coursework**. The projects demonstrate practical implementation of mobile application development concepts, including UI design, user interaction, data handling, and state management.
+
+## Project Structure
+SIT708/
+|__ TravelCompanionApp/
+|__ QuizApp/
+|__ README.md
+
+# 1. Travel Companion App
 
 ## Overview
-The Travel Companion App is an Android application developed for Pass Task 2.1. It helps international travellers perform essential conversions in three categories:
-- Currency
-- Fuel/Distance
-- Temperature
+The Travel Companion App is designed to assist users with common travel-related conversions. It provides a simple and efficient interface for converting currency, fuel/distance, and temperature values.
 
 ## Features
-- User-friendly interface with spinners for selecting conversion category and units
-- Input field for conversion value
-- Convert button to perform calculations
-- Output display for converted result
-- Validation for empty and non-numeric inputs
-- Identity conversion handling
-- Negative value restriction for fuel/distance conversions
+- Currency conversion (USD, AUD, EUR, JPY, GBP)  
+- Fuel and distance conversion  
+- Temperature conversion (Celsius, Fahrenheit, Kelvin)  
+- Input validation and error handling  
+- Clean and user-friendly UI  
 
-## Fixed Conversion Rates Used
-### Currency
-- 1 USD = 1.55 AUD
-- 1 USD = 0.92 EUR
-- 1 USD = 148.50 JPY
-- 1 USD = 0.78 GBP
+## Key Concepts Implemented
+- Activity-based navigation  
+- Form handling and validation  
+- Modular conversion logic  
+- UI styling using drawable resources  
 
-### Fuel/Distance
-- 1 mpg = 0.425 km/L
-- 1 Gallon (US) = 3.785 Liters
-- 1 Nautical Mile = 1.852 Kilometers
+# 2. Quiz App
 
-### Temperature
-- Celsius to Fahrenheit: F = (C × 1.8) + 32
-- Fahrenheit to Celsius: C = (F − 32) / 1.8
-- Celsius to Kelvin: K = C + 273.15
+## Overview
+The Quiz App is an interactive Android application that allows users to attempt a multiple-choice quiz and receive real-time feedback on their performance.
+
+## Features
+- Multiple-choice questions with four options  
+- Visual feedback:  
+  - Correct answers--> Green  
+  - Incorrect answers --> Red  
+- Progress tracking using ProgressBar  
+- Final score display on completion  
+- User name persistence across screens  
+- Single dynamic button (Submit --> Next) for improved UX  
+- Dark mode and light mode toggle  
+- Theme persistence using SharedPreferences  
+
+## Key Concepts Implemented
+- Multi-activity architecture (Main, Quiz, Result)  
+- Intent-based data passing between screens  
+- State management (user input, score tracking)  
+- Dynamic UI updates and event handling  
+- Theme switching using AppCompatDelegate  
+- Reusable UI styling with drawable resources  
+
+## UI Design Approach
+
+Both applications follow a clean and minimal UI design:
+
+- Card-based layouts for better readability  
+- Consistent spacing and alignment  
+- Styled buttons using custom drawable XML  
+- Visual feedback for user interactions  
+- Support for both light and dark themes  
 
 ## Technologies Used
-- Java
-- Android Studio
-- XML layouts
 
-## Validation and Error Handling
-- Prevents empty input
-- Prevents non-numeric input
-- Handles same-unit conversion
-- Prevents negative values for fuel/distance conversions
+- Java  
+- Android Studio  
+- XML (UI Design)  
+- SharedPreferences (data persistence)  
+- Material Design principles  
 
-## How to run
-- Open the project in Android Studio
-- Build and run the app
-- Use an emulator or a physical Android device
+## How to Run the Projects
+
+1. Clone the repository: git clone https://github.com/your-username/SIT708.git
+
+2. Open the project in Android Studio  
+
+3. Build the project  
+
+4. Run the app using:
+- Android Emulator OR  
+- Physical Android device  
+
+## Testing Highlights
+
+- Input validation for user entries  
+- Correct/incorrect answer feedback  
+- Progress tracking accuracy  
+- Theme toggle persistence across screens  
+- Navigation between activities  
+
+## Notes
+
+- Both applications are developed for academic purposes  
+- Currency values in the Travel Companion App are approximate  
+- Quiz questions are static and stored locally  
 
 ## Author
-Subathira Thinakaran
+
+Subathira Thinakaran  
