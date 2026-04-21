@@ -6,6 +6,9 @@ This repository contains Android applications developed as part of the **SIT708 
 SIT708/
 |__ TravelCompanionApp/
 |__ QuizApp/
+|__ PersonalEventPlannerApp/
+|__ SportsNewsFeedApp/
+|__ iStreamApp/
 |__ README.md
 
 # 1. Travel Companion App
@@ -118,6 +121,78 @@ The Personal Event Planner App allows users to organise upcoming events, appoint
 - Snackbars/Toasts provide feedback for save, update, and delete actions  
 - Events successfully reload after app restart 
  
+# 4. Sports News Feed App
+
+## Overview
+The Sports News Feed App is a fragment-based Android application that displays sports news in a structured and interactive format using a single activity architecture.
+
+## Features
+- Horizontal RecyclerView for Featured Matches  
+- Vertical RecyclerView for Latest Sports News  
+- Search functionality to filter news by sport category or title  
+- Detailed story view with image and description  
+- Related stories based on sport category  
+- Bookmark functionality using local storage  
+- Separate Bookmarks screen to view saved stories  
+
+## Key Concepts Implemented
+- Single Activity architecture with multiple Fragments  
+- Navigation Component for fragment transitions  
+- RecyclerView with multiple adapters  
+- Data passing using Bundles  
+- Dynamic filtering logic  
+- Local storage using SharedPreferences  
+
+# 5. iStream App
+
+## Overview
+The iStream App is a multimedia Android application that allows users to log in, play YouTube videos, and manage a personalised playlist using local database storage.
+
+## Features
+- User Signup and Login system  
+- Room database for storing user credentials  
+- YouTube video playback using iFrame-based player integration  
+- URL validation and error handling  
+- Add video to playlist  
+- User-specific playlist management  
+- Clickable playlist items for playback  
+- Logout functionality  
+
+## Key Concepts Implemented
+- Multi-activity architecture  
+- Room Database (Entity, DAO, Database classes)  
+- Background processing using Executors  
+- YouTube video integration  
+- Intent-based data passing between activities  
+- Input validation and user authentication  
+
+## UI Design Approach
+
+All applications follow a clean and minimal UI design:
+
+- Card-based layouts for better readability  
+- Consistent spacing and alignment  
+- Styled buttons using custom drawable XML  
+- Visual feedback for user interactions  
+- Support for modern UI practices  
+
+## Technologies Used
+
+- Java  
+- Android Studio  
+- XML (UI Design)  
+- SharedPreferences (local storage)  
+- Room Database  
+- Material Design principles  
+
+## Testing Highlights
+
+- Input validation across all applications  
+- Navigation between activities and fragments  
+- RecyclerView data consistency  
+- Database persistence (Room and SharedPreferences)  
+- User authentication and session handling  
+- Video playback validation and URL handling 
 
 ## How to Run the Projects
 
@@ -137,6 +212,8 @@ The Personal Event Planner App allows users to organise upcoming events, appoint
 - Currency values in the Travel Companion App are approximate  
 - Quiz questions are static and stored locally  
 - Event list in Personal Event Planner App are stored locally and the event categories are static
+- Sports news data is static (dummy data)  
+- YouTube playback may vary depending on video embedding permissions  
 
 ## Author
 

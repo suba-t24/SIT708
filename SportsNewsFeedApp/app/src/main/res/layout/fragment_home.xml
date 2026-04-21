@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F8FAFC"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search by sport"
+        android:background="@drawable/input_bg"
+        android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/tvFeaturedSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Featured Matches"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#111827"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFeatured"
+        android:layout_width="match_parent"
+        android:layout_height="170dp" />
+
+    <TextView
+        android:id="@+id/tvLatestSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest Sports News"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#111827"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvEmptySearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No stories found"
+        android:textColor="#6B7280"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLatest"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
