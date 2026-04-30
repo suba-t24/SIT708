@@ -9,6 +9,8 @@ SIT708/
 |__ PersonalEventPlannerApp/
 |__ SportsNewsFeedApp/
 |__ iStreamApp/
+|__ LLMLearningAssistantApp/
+|__ LostAndFoundApp/
 |__ README.md
 
 # 1. Travel Companion App
@@ -213,7 +215,94 @@ All applications follow a clean and minimal UI design:
 - Quiz questions are static and stored locally  
 - Event list in Personal Event Planner App are stored locally and the event categories are static
 - Sports news data is static (dummy data)  
-- YouTube playback may vary depending on video embedding permissions  
+- YouTube playback may vary depending on video embedding permissions
+
+# 6. LLM-Enhanced Learning Assistant App
+
+## Overview
+The LLM-Enhanced Learning Assistant App is an Android application that provides personalised learning support using AI-style features. It generates tasks based on user interests and includes learning utilities such as hints, explanations, summaries, flashcards, and study plans.
+The app uses a Flask backend with optional Ollama integration. If the AI model is unavailable, fallback responses ensure smooth and reliable performance.
+
+## Features
+- User login and signup  
+- Interest-based task generation  
+- Quiz with multiple-choice questions  
+- LLM-based features:
+  - Generate hints  
+  - Explain answers  
+  - Summarise lessons  
+  - Create flashcards  
+  - Suggest a 7-day study plan  
+- Prompt and response display  
+- Loading and error handling  
+- Fallback responses for reliability  
+
+## Key Concepts Implemented
+- Multi-activity Android architecture  
+- Retrofit for API communication  
+- Flask backend integration  
+- Dynamic prompt generation  
+- Asynchronous API handling  
+- Fallback mechanism for LLM responses  
+
+## Technologies Used
+- Java  
+- Android Studio  
+- XML (UI Design)  
+- Retrofit  
+- Flask (Backend)  
+- Ollama (Optional AI)  
+
+## Running the Backend Locally
+
+1. Navigate to backend folder: cd llm_learning_backend
+2. Create virtual environment: python3 -m venv venv
+3. Activate environment - macOS/Linux: source venv/bin/activate
+4. Install dependencies: pip install -r requirements.txt
+5. Run backend: python app.py
+Backend will run at: http://127.0.0.1:5001
+
+## Notes
+- The app supports both AI-based and fallback responses  
+- Ollama integration is optional and may be resource-intensive  
+- Fallback ensures consistent performance during demo  
+
+# 7. Lost and Found App
+
+## Overview
+
+The Lost and Found App is an Android application that helps users report lost or found items and reconnect them with their owners. It uses a local SQLite database to store and manage item listings.
+
+## Features
+- Create Lost or Found adverts
+- Upload image for each advert (mandatory)
+- Add item details (name, phone, description, date, location, category)
+- View all adverts
+- Filter adverts by category (Electronics, Pets, Wallets, etc.)
+- View detailed item information
+- Automatic date and time stamp for each post
+- Remove advert once item is returned
+
+## Key Concepts Implemented
+- SQLite database (CRUD operations)
+- Multi-activity architecture
+- Intent-based navigation
+- Image selection using Storage Access Framework
+- Input validation
+- Custom UI styling (blue theme, card layout)
+
+## Technologies Used
+- Java
+- Android Studio
+- XML (UI Design)
+- SQLite
+
+## Testing Highlights
+- Form validation and error handling
+- Image upload functionality
+- Category filtering accuracy
+- Database persistence and deletion
+- Smooth navigation between screens
 
 ## Author
 
