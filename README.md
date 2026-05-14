@@ -12,6 +12,7 @@ SIT708/
 |__ LLMLearningAssistantApp/
 |__ LostAndFoundApp/
 |__ LLMChatBotApp/
+|__ LostAndFoundAppGeo/
 |__ README.md
 
 # 1. Travel Companion App
@@ -346,6 +347,31 @@ Backend will run at: http://127.0.0.1:5001
 - The app supports both AI-based and fallback responses  
 - Ollama integration is optional and may be resource-intensive  
 - Fallback ensures consistent performance during demo 
+
+## 9 Lost and Found app Enhancements – Geo and Map Features
+## Overview
+
+The Lost and Found App was extended with geo-location and Google Maps features to support location-based item tracking and nearby item search.
+
+## Additional Features
+- Google Maps integration
+- Google Places autocomplete
+- Current device location retrieval
+- Latitude and longitude storage in SQLite
+- Map markers for lost and found items
+- Radius-based nearby item search
+
+## Additional Key Concepts Implemented
+- Google Maps SDK
+- Google Places API
+- FusedLocationProviderClient
+- Geo-location and distance calculation
+
+## Additional Testing Highlights
+- Current location retrieval
+- Map marker display
+- Radius search filtering
+- Geo-location database storage
 
 ## Author
 
