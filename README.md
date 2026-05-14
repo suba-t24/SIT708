@@ -11,6 +11,7 @@ SIT708/
 |__ iStreamApp/
 |__ LLMLearningAssistantApp/
 |__ LostAndFoundApp/
+|__ LLMChatBotApp/
 |__ README.md
 
 # 1. Travel Companion App
@@ -303,6 +304,48 @@ The Lost and Found App is an Android application that helps users report lost or
 - Category filtering accuracy
 - Database persistence and deletion
 - Smooth navigation between screens
+
+# 8. LLM ChatBot App
+
+## Overview
+The LLM ChatBot App is an Android chatbot application developed using Java in Android Studio. The app allows users to log in with a username, interact with an AI chatbot, and store chat history locally using SQLite.
+
+The chatbot connects to a Flask backend integrated with the Ollama `phi3:mini` language model for generating responses.
+
+## Features
+- Username-based login
+- Chatbot messaging interface
+- User and bot message bubbles
+- Message timestamps
+- SQLite chat history persistence
+- Retrofit API communication
+- Flask backend integration
+- Ollama `phi3:mini` support
+- Custom blue and teal UI theme
+
+## Technologies Used
+- Java
+- Android Studio
+- XML
+- SQLite
+- Retrofit
+- Flask
+- Ollama
+- Python
+
+## Running the Backend Locally
+
+1. Navigate to backend folder: cd llm_chatpot_backend
+2. Create virtual environment: python3 -m venv venv
+3. Activate environment - macOS/Linux: source venv/bin/activate
+4. Install dependencies: pip install -r requirements.txt
+5. Run backend: python app.py
+Backend will run at: http://127.0.0.1:5001
+
+## Notes
+- The app supports both AI-based and fallback responses  
+- Ollama integration is optional and may be resource-intensive  
+- Fallback ensures consistent performance during demo 
 
 ## Author
 

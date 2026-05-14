@@ -5,133 +5,95 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL_NAME = "phi3:mini"
-
-# Set False for smooth demo. Set True only when you want one real AI response.
+# Set to True to use Ollama phi3:mini
+# Set to False to use lightweight fallback replies
 USE_OLLAMA = True
 
-
-def fallback_response(prompt, utility_type):
-    if utility_type == "hint":
-        return (
-            "Hint: Focus on the key concept in the question. Try eliminating options "
-            "that do not match the definition or behaviour being asked."
-        )
-
-    if utility_type == "explain_answer":
-        return (
-            "Explanation: The correct answer matches the main concept tested in the question. "
-            "Compare the selected answer with the correct answer and identify why the other "
-            "options are less suitable."
-        )
-
-    if utility_type == "summary":
-        return (
-            "Summary: This lesson explains the core idea of the topic, how it is applied in "
-            "practice, and why it is useful for solving programming and software problems."
-        )
-
-    if utility_type == "flashcards":
-        return (
-            "Flashcard 1\n"
-            "Q: What is the main idea of this topic?\n"
-            "A: It explains a key concept used in software development.\n\n"
-            "Flashcard 2\n"
-            "Q: Why is this topic useful?\n"
-            "A: It helps students solve problems more clearly and efficiently.\n\n"
-            "Flashcard 3\n"
-            "Q: How can this topic be revised?\n"
-            "A: Review the definition, practise examples, and test yourself with quiz questions."
-        )
-
-    if utility_type == "study_plan":
-        return (
-            "7-Day Study Plan:\n"
-            "Day 1: Review the basic concepts.\n"
-            "Day 2: Practise simple examples.\n"
-            "Day 3: Complete quiz questions.\n"
-            "Day 4: Review incorrect answers.\n"
-            "Day 5: Create flashcards.\n"
-            "Day 6: Practise mixed questions.\n"
-            "Day 7: Revise weak areas and summarise your learning."
-        )
-
-    return "Generated learning response based on the given prompt."
+OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_MODEL = "phi3:mini"
 
 
-def call_ollama(prompt):
-    if not USE_OLLAMA:
-        print("OLLAMA DISABLED: using fallback response")
-        return None
+def fallback_reply(message):
+    message_lower = message.lower()
 
-    try:
-        payload = {
-            "model": MODEL_NAME,
-            "prompt": prompt,
-            "stream": False,
-            "options": {
-                "num_predict": 120,
-                "temperature": 0.4
-            }
+    if "hello" in message_lower or "hi" in message_lower:
+        return "Hello! I am your AI chatbot. How can I help you today?"
+
+    if "name" in message_lower:
+        return "I am an LLM-powered chatbot built for the SIT708 Task 8.1."
+
+    if "help" in message_lower:
+        return "I can answer questions, explain ideas, and assist with simple learning tasks."
+
+    if "android" in message_lower:
+        return "Android development uses activities, XML layouts, intents, APIs, and local storage such as SQLite or Room."
+
+    if "sqlite" in message_lower or "room" in message_lower:
+        return "SQLite is a lightweight local database, and Room is an Android library that makes SQLite easier to use for storing chat history."
+
+    if "ai" in message_lower or "artificial intelligence" in message_lower:
+        return "Artificial Intelligence allows computers to perform tasks that usually need human intelligence, such as answering questions, recognising patterns, and making decisions."
+
+    if "study tips" in message_lower:
+        return "Here are three study tips: plan your tasks early, revise regularly, and take short breaks to stay focused."
+
+    return "That is an interesting question. This chatbot backend can respond using either Ollama phi3:mini or a lightweight fallback response."
+
+
+def ollama_reply(message):
+    payload = {
+        "model": OLLAMA_MODEL,
+        "prompt": message,
+        "stream": False,
+        "options": {
+            "num_predict": 120
         }
+    }
 
-        response = requests.post(OLLAMA_URL, json=payload, timeout=90)
+    response = requests.post(OLLAMA_URL, json=payload, timeout=90)
 
-        print("OLLAMA STATUS:", response.status_code)
-        print("OLLAMA BODY:", response.text[:500])
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("response", "No response generated.").strip()
 
-        if response.status_code == 200:
-            return response.json().get("response", "").strip()
-
-        return None
-
-    except Exception as e:
-        print("OLLAMA ERROR:", str(e))
-        return None
+    return fallback_reply(message)
 
 
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({
-        "message": "LLM Learning Assistant backend is running",
+        "status": "running",
+        "message": "LLM ChatBot backend is running",
         "ollama_enabled": USE_OLLAMA,
-        "model": MODEL_NAME
+        "model": OLLAMA_MODEL if USE_OLLAMA else "fallback"
     })
 
 
-@app.route("/generate", methods=["POST"])
-def generate():
+@app.route("/chat", methods=["POST"])
+def chat():
     data = request.get_json()
 
-    if not data:
+    username = data.get("username", "User")
+    message = data.get("message", "").strip()
+
+    if not message:
         return jsonify({
-            "response": "",
-            "source": "error",
-            "error": "No JSON body received"
-        }), 400
-
-    prompt = data.get("prompt", "").strip()
-    utility_type = data.get("utilityType", "").strip()
-
-    if not prompt:
-        return jsonify({
-            "response": "",
-            "source": "error",
-            "error": "Prompt cannot be empty"
-        }), 400
-
-    llm_response = call_ollama(prompt)
-
-    if llm_response:
-        return jsonify({
-            "response": llm_response,
-            "source": "ollama"
+            "username": username,
+            "reply": "Please enter a message."
         })
 
+    try:
+        if USE_OLLAMA:
+            reply = ollama_reply(message)
+        else:
+            reply = fallback_reply(message)
+
+    except Exception:
+        reply = fallback_reply(message)
+
     return jsonify({
-        "response": fallback_response(prompt, utility_type),
-        "source": "fallback"
+        "username": username,
+        "reply": reply
     })
 
 
