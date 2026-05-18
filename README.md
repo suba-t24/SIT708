@@ -373,6 +373,34 @@ The Lost and Found App was extended with geo-location and Google Maps features t
 - Radius search filtering
 - Geo-location database storage
 
+## 10 LLM-Enhanced Learning Assistant App - extended
+## Overview
+
+LLM-Enhanced Learning Assistant App was extended by adding cloud integration, backend API communication, and advanced user features.
+The app now uses MongoDB Atlas for persistent storage and a Flask backend for managing user data and LLM interactions, making it closer to a real-world application.
+
+## Additional Features
+- User authentication with MongoDB Atlas
+- Cloud-based quiz history and profile storage
+- QR code profile sharing and text sharing
+- Google Pay API integration (test mode)
+- Account upgrade system (Starter, Intermediate, Advanced)
+- Backend-synced LLM interactions
+
+## Additional Key Concepts Implemented
+- Full-stack integration (Android + Flask + MongoDB)
+- REST API communication with Retrofit
+- Cloud data persistence
+- Payment and QR code integration
+- Improved error handling and data synchronisation
+
+## Additional Testing Highlights
+- Verified login and data persistence
+- Tested quiz history storage and retrieval
+- Validated QR code sharing
+- Tested Google Pay (test environment)
+- Confirmed API communication and fallback handling
+
 ## Author
 
 Subathira Thinakaran  
