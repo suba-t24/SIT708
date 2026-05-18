@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Results"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tvQuestion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/tvStatus1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnExplainQ1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explain Answer"
+            android:background="@drawable/button_primary"
+            android:backgroundTint="@null"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvPromptR1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/progressR1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvExplanation1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvErrorR1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FEE2E2"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvQuestion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/tvStatus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnExplainQ2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explain Answer"
+            android:background="@drawable/button_primary"
+            android:backgroundTint="@null"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvPromptR2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/progressR2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvExplanation2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvErrorR2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FEE2E2"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvQuestion3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/tvStatus3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnExplainQ3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explain Answer"
+            android:background="@drawable/button_primary"
+            android:backgroundTint="@null"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvPromptR3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/progressR3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvExplanation3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvErrorR3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FEE2E2"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_primary"
+            android:backgroundTint="@null"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>

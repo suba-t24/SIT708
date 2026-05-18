@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="22dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Profile"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#111827"
+        android:gravity="center" />
+
+    <ProgressBar
+        android:id="@+id/progressQr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp" />
+
+    <ImageView
+        android:id="@+id/imgQrCode"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:visibility="gone"
+        android:contentDescription="Profile QR Code" />
+
+    <TextView
+        android:id="@+id/tvQrProfileData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#374151"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="14dp" />
+
+    <Button
+        android:id="@+id/btnShareQrImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share QR Code"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_primary"
+        android:backgroundTint="@null"
+        android:enabled="false"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnShareText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share as Text"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnCloseDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

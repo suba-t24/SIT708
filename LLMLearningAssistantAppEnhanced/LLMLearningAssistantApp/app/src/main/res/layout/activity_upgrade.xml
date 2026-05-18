@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_primary"
+            android:backgroundTint="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upgrade"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="your experience"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="18dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Starter"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic learning support and standard task generation"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="6dp" />
+
+            <Button
+                android:id="@+id/btnStarter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Purchase Starter"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_primary"
+                android:backgroundTint="@null"
+                android:layout_marginTop="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intermediate"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Improved quiz generation and deeper answer explanations"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="6dp" />
+
+            <Button
+                android:id="@+id/btnIntermediate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Purchase Intermediate"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_primary"
+                android:backgroundTint="@null"
+                android:layout_marginTop="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="18dp"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Advanced"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Advanced learning support, personalised feedback, and premium study planning"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="6dp" />
+
+            <Button
+                android:id="@+id/btnAdvanced"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Purchase Advanced"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_primary"
+                android:backgroundTint="@null"
+                android:layout_marginTop="14dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
